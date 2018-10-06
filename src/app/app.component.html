@@ -5,4 +5,12 @@
       <button class="btn btn-primary" (click)="add()">enter</button>
     </div>
   </div>
+  <div class="row">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let task of tasksList">
+        {{task}}
+      </li>
+
+    </ul>
+  </div>
 </div>

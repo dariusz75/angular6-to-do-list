@@ -35,4 +35,9 @@ export class AppComponent {
     this.tasksList.push(done);
   }
 
+  removeAll() {
+    this.tasksList = [];
+    this.doneList = [];
+  }
+
 }

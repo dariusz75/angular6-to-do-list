@@ -9,11 +9,30 @@ export class AppComponent {
 
   newTask: string;
   tasksList: Array<string> = [];
+  doneTask: string;
+  doneList: Array<string> = [];
 
   add() {
     this.tasksList.push(this.newTask);
     this.newTask = '';
-    console.log(this.tasksList);
+  }
+
+  remove(task) {
+    this.tasksList = this.tasksList.filter(e => e !== task);
+  }
+
+  done(task) {
+    this.doneList.push(task);
+    this.tasksList = this.tasksList.filter(e => e !== task);
+  }
+
+  removeDone(done) {
+    this.doneList = this.doneList.filter(e => e !== done);
+  }
+
+  backToDo(done) {
+    this.doneList = this.doneList.filter(e => e !== done);
+    this.tasksList.push(done);
   }
 
 }

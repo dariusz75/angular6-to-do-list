@@ -1,16 +1,34 @@
 <div class="container">
   <div class="row">
     <div class="form-inline">
-      <input class="form-control" [(ngModel)]="newTask" placeholder="Task to do">
-      <button class="btn btn-primary" (click)="add()">enter</button>
+      <input class="form-control" [(ngModel)]="newTask" placeholder="Enter task">
+      <button class="btn btn-primary" (click)="add()">Add</button>
     </div>
   </div>
   <div class="row">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let task of tasksList">
-        {{task}}
-      </li>
-
-    </ul>
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Tasks to do
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let task of tasksList">
+          {{task}}
+          <button class="btn btn-info" (click)="done(task)"><i class="fa fa-check-circle"></i></button>
+          <button class="btn btn-danger" (click)="remove(task)"><i class="fa fa-trash"></i></button>
+        </li>
+      </ul>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Tasks done
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let done of doneList">
+          {{done}}
+          <button class="btn btn-info" (click)="backToDo(done)"><i class="fa fa-chevron-circle-left"></i></button>
+          <button class="btn btn-danger" (click)="removeDone(done)"><i class="fa fa-trash"></i></button>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

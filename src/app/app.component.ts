@@ -23,7 +23,7 @@ export class AppComponent {
 
   done(task) {
     this.doneList.push(task);
-    this.tasksList = this.tasksList.filter(e => e !== task);
+    this.remove(task);
   }
 
   removeDone(done) {

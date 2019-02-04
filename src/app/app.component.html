@@ -6,13 +6,7 @@
         <div class="card-header">
           Tasks to do
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" *ngFor="let task of tasksList">
-            {{task}}
-            <button class="btn btn-info float-right" (click)="done(task)"><i class="fa fa-check-circle"></i></button>
-            <button class="btn btn-danger float-right" (click)="remove(task)"><i class="fa fa-trash"></i></button>
-          </li>
-        </ul>
+        <app-to-do-task [tasksList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)"></app-to-do-task>
       </div>
     </div>
     <div class="col-lg-6">

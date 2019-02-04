@@ -1,3 +1,13 @@
-<p>
-  add-task works!
-</p>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="form-inline">
+          <input class="form-control" [(ngModel)]="newTask" placeholder="Enter task">
+          <button class="btn btn-primary add" (click)="add()" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Add</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

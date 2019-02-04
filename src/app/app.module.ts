@@ -5,11 +5,13 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { ToDoTaskComponent } from './to-do-task/to-do-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    ToDoTaskComponent
   ],
   imports: [
     BrowserModule,

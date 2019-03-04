@@ -1,12 +1,13 @@
 <div class="container">
-  <app-add-task (emitTask)='add($event)'></app-add-task>
+  <app-add-task (emitedTask)='addTask($event)'></app-add-task>
   <div class="row">
     <div class="col-lg-6">
       <div class="card">
         <div class="card-header">
           Tasks to do
         </div>
-        <app-to-do-task [tasksList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)"></app-to-do-task>
+        <app-to-do-task [tasksList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)">
+        </app-to-do-task>
       </div>
     </div>
     <div class="col-lg-6">
@@ -14,13 +15,7 @@
         <div class="card-header">
           Tasks done
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" *ngFor="let done of doneList">
-            {{done}}
-            <button class="btn btn-info float-right" (click)="backToDo(done)"><i class="fa fa-chevron-circle-left"></i></button>
-            <button class="btn btn-danger float-right" (click)="removeDone(done)"><i class="fa fa-trash"></i></button>
-          </li>
-        </ul>
+        <app-done-task [tasksDone]="tasksDone"></app-done-task>
       </div>
     </div>
   </div>

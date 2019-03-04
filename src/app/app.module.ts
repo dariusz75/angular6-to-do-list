@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { ToDoTaskComponent } from './to-do-task/to-do-task.component';
+import { DoneTaskComponent } from './done-task/done-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskComponent,
-    ToDoTaskComponent
+    ToDoTaskComponent,
+    DoneTaskComponent
   ],
   imports: [
     BrowserModule,

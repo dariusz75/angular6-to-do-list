@@ -9,7 +9,7 @@ export class AddTaskComponent implements OnInit {
 
   newTask: string;
   @Output()
-  emitTask = new EventEmitter<string>();
+  emitedTask = new EventEmitter<string>();
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   add() {
-    this.emitTask.emit(this.newTask);
+    this.emitedTask.emit(this.newTask);
     this.newTask = '';
   }
 

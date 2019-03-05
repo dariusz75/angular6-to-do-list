@@ -15,7 +15,8 @@
         <div class="card-header">
           Tasks done
         </div>
-        <app-done-task [tasksDone]="tasksDone"></app-done-task>
+        <app-done-task [tasksDone]="doneList" (emitBackToToDo)="backToToDo($event)"
+          (emitRemoveDone)="removeDone($event)"></app-done-task>
       </div>
     </div>
   </div>

@@ -1,7 +1,8 @@
 <ul class="list-group list-group-flush">
-  <li class="list-group-item" *ngFor="let done of doneList">
+  <li class="list-group-item" *ngFor="let done of tasksDone">
     {{done}}
-    <button class="btn btn-info float-right" (click)="backToDo(done)"><i class="fa fa-chevron-circle-left"></i></button>
+    <button class="btn btn-info float-right" (click)="backToToDo(done)"><i
+        class="fa fa-chevron-circle-left"></i></button>
     <button class="btn btn-danger float-right" (click)="removeDone(done)"><i class="fa fa-trash"></i></button>
   </li>
 </ul>

@@ -19,11 +19,11 @@ export class ToDoTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  remove(task: string) {
+  removeFromToDo(task: string) {
     this.emitRemove.emit(task);
   }
 
-  done(task: string) {
+  moveToDone(task: string) {
     this.emitDone.emit(task);
   }
 

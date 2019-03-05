@@ -28,7 +28,7 @@ export class AppComponent {
     this.doneList = this.doneList.filter(e => e !== done);
   }
 
-  backToDo(done) {
+  backToToDo(done) {
     this.doneList = this.doneList.filter(e => e !== done);
     this.tasksList.push(done);
   }

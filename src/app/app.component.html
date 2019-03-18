@@ -1,13 +1,12 @@
 <div class="container">
-  <app-add-task (emitedTask)='addTask($event)'></app-add-task>
+  <app-add-task></app-add-task>
   <div class="row">
     <div class="col-lg-6">
       <div class="card">
         <div class="card-header">
           Tasks to do
         </div>
-        <app-to-do-task [tasksList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)">
-        </app-to-do-task>
+        <app-to-do-task></app-to-do-task>
       </div>
     </div>
     <div class="col-lg-6">
@@ -15,8 +14,7 @@
         <div class="card-header">
           Tasks done
         </div>
-        <app-done-task [tasksDone]="doneList" (emitBackToToDo)="backToToDo($event)"
-          (emitRemoveDone)="removeDone($event)"></app-done-task>
+        <app-done-task></app-done-task>
       </div>
     </div>
   </div>

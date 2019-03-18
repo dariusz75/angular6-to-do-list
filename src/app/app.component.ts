@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TasksService } from './services/tasks.service';
 
 @Component({
   selector: 'app-root',
@@ -7,35 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  tasksList: Array<string> = [];
-  doneTask: string;
-  doneList: Array<string> = [];
-
-  addTask(task: string) {
-    this.tasksList.push(task);
-  }
-
-  remove(task) {
-    this.tasksList = this.tasksList.filter(e => e !== task);
-  }
-
-  done(task) {
-    this.doneList.push(task);
-    this.remove(task);
-  }
-
-  removeDone(done) {
-    this.doneList = this.doneList.filter(e => e !== done);
-  }
-
-  backToToDo(done) {
-    this.doneList = this.doneList.filter(e => e !== done);
-    this.tasksList.push(done);
-  }
+  constructor(private tasksService: TasksService) { }
 
   removeAll() {
-    this.tasksList = [];
-    this.doneList = [];
+    this.tasksService.removeAll();
   }
 
 }

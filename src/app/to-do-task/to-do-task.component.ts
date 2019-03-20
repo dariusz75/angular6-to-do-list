@@ -25,6 +25,7 @@ export class ToDoTaskComponent implements OnInit {
   }
 
   moveToDone(task: Task) {
+    task.end = new Date();
     this.tasksService.done(task);
   }
 

@@ -1,5 +1,5 @@
 <ul class="list-group list-group-flush">
-  <li class="list-group-item" *ngFor="let done of tasksDone">
+  <li class="list-group-item" *ngFor="let done of tasksDone" [date]="done.end" appDate>
     {{ done.name }}
     <button class="btn btn-info float-right" (click)="backToToDo(done)"><i
         class="fa fa-chevron-circle-left"></i></button>

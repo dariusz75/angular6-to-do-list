@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../services/tasks.service';
+import { Task } from '../models/task';
 
 @Component({
   selector: 'app-done-task',
@@ -8,9 +9,9 @@ import { TasksService } from '../services/tasks.service';
 })
 export class DoneTaskComponent implements OnInit {
 
-  tasksDone: Array<string> = [];
-  emitBackToToDo: Array<string> = [];
-  emitRemoveDone: Array<string> = [];
+  tasksDone: Array<Task> = [];
+  emitBackToToDo: Array<Task> = [];
+  emitRemoveDone: Array<Task> = [];
 
   constructor(private tasksService: TasksService) {
     this.tasksService.getDoneListObservable().subscribe(tasks => {
@@ -29,11 +30,11 @@ export class DoneTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  backToToDo(task: string) {
+  backToToDo(task: Task) {
     this.tasksService.backToToDo(task);
   }
 
-  removeDone(task: string) {
+  removeDone(task: Task) {
     this.tasksService.removeDone(task);
   }
 

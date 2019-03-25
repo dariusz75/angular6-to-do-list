@@ -1,6 +1,6 @@
 <ul class="list-group list-group-flush">
-  <li class="list-group-item" *ngFor="let task of tasksList" appDate [date]="task.created">
-    <span>{{ task.name }}</span>
+  <li class="list-group-item" *ngFor="let task of tasksList | sortByName" appDate [date]="task.created">
+    <span>{{ task.name | capital: '!!!' }}</span>
     <button class="btn btn-info float-right" (click)="moveToDone(task)"><i class="fa fa-check-circle"></i></button>
     <button class="btn btn-danger float-right" (click)="removeFromToDo(task)"><i class="fa fa-trash"></i></button>
   </li>
